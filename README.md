@@ -25,7 +25,7 @@ Here is a summary of the iterative process:
 
 
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/Lambda_arch.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/architecture.png?raw=true">
 </p>
 
 
