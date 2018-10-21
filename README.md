@@ -54,7 +54,16 @@ We should make the following transformations:
 We don't want the models to learn on specific companies names:
 - t3 : replace company name by 'firm'
 
-Here is the new cloud of words with the clean data:
+The new sample and the new cloud of words with the clean data looks like:
+
+```
+1: @firm I'll pass along the advice. You guys rock!!
+2: @firm I sent you a dm with my file reference number.. I just want to know if someone has locat...
+3: @firm Black History Commercial is really sweet. Well done.
+4: 
+5: @firm SEA to DEN. South Sound Volleyball team on its way!
+
+```
 
  <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/wordcloud_airline_2.png?raw=true">
