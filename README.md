@@ -31,6 +31,37 @@ Here is a summary of the iterative process:
 
 # Data cleaning
 
+Let's have a look at what the raw tweets look like:
+
+```
+1: @JetBlue I'll pass along the advice. You guys rock!!
+2: @united I sent you a dm with my file reference number.. I just want to know if someone has locat...
+3: @SouthwestAir Black History Commercial is really sweet. Well done.
+4: @SouthwestAir why am I still in Baltimore?! @delta is doing laps around us and laughing about it...
+5: @SouthwestAir SEA to DEN. South Sound Volleyball team on its way! http://t.co/tN5cXCld6M
+
+```
+We should make the following transformations:
+- t1 : remove the urls starting with http -> regex
+- t2 : we assume that when two companies are mentioned, as in tweet 4, it is very complex to understand which company the customer is talking to -> we will keep only the tweets with one company mentioned
+ 
+ We can also use wordcloud to map the most frequent words:
+ 
+ <p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/wordcloud_airline_1.png?raw=true">
+</p>
+
+We don't want the models to learn on specific companies names:
+- t3 : replace company name by 'firm'
+
+Here is the new cloud of words with the clean data:
+
+ <p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/wordcloud_airline_2.png?raw=true">
+</p>
+
+
+
 # Modeling
 
 ## Sentiment classifier
