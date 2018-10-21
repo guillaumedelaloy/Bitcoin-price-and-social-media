@@ -93,7 +93,21 @@ For both model:
 
 ## Sentiment classifier
 
+We obtain a final accuracy of : 92.36 %
+
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/sentiment_training.png?raw=true">
+</p>
+
 ## Topic modeling
+
+I rearranged a bit the categories of neagtive reasons because the category ```Bad flight``` was quite blurry and hard to differenciate. As a consequence, I merged the category with ```Can't Tell```, which means it is not clear to identify the main reason of the complaint.
+
+We obtain a final accuracy of : 97.68 %
+
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/topic_training.png?raw=true">
+</p>
 
 # Results
 
