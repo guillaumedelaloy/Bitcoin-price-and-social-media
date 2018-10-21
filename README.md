@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+# Introduction
 
-You can use the [editor on GitHub](https://github.com/guillaumedelaloy/Bitcoin-price-and-social-media/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Today, a good way get your flight reimbursed when facing a major problem is to publish your complaint social medias. I was curious about several things : 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Do people really use social medias to communicate with the airline companies ?
+What are the most frequent complaints ?
+Is there a significant difference in terms of customer experience between the companies (based on social media activity) ?
 
-### Markdown
+# Method
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I have gathered during two weeks the tweets related to the biggest airline companies : American Air, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
+- a sentiment classifier, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
+- a topic classification, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
-```markdown
-Syntax highlighted code block
+In order to do this, I used the following AWS features:
 
-# Header 1
-## Header 2
-### Header 3
+- a lambda function called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
+- a lambda function computing the sentiment of a tweet, called through an API built with API Gateway
+- a lambda function computing the topic of a complaints, called through an API built with API Gateway
+- a S3 bucket storing the models trained locally
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+Here is a summary of the iterative process:
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/guillaumedelaloy/Bitcoin-price-and-social-media/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
