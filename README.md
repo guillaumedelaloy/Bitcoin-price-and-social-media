@@ -60,9 +60,27 @@ Here is the new cloud of words with the clean data:
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/wordcloud_airline_2.png?raw=true">
 </p>
 
-
+We will apply those transformations to both the training dataset and the data collected and stored in the dynamo table.
 
 # Modeling
+
+Our training dataset has initially 14640 lines with the following features:
+tweet_id, text of the tweet, date, sentiment (0 for negative, 1 for neutral, 2 for positive), negativereason,
+
+where the possible negative reasons are:
+
+```
+'Bad Flight', "Can't Tell", 'Late Flight',
+       'Customer Service Issue', 'Flight Booking Problems', 'Lost Luggage',
+       'Flight Attendant Complaints', 'Cancelled Flight',
+       'Damaged Luggage', 'longlines'
+```
+For both model: 
+- we will rebalance the classes by artificially upsampling the training set
+- we will use Keras (Tensorflow as backend) to design a neural network
+- we transform the tweets into vectors of size (num_words=35, voc_size=10000) by a bag of words technique
+- the architecture of the nn is : one embedding layer (embedding dim=100), one LSTM layer, one Dense layer (size = number of classes)
+
 
 ## Sentiment classifier
 
