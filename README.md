@@ -24,6 +24,10 @@ In order to do this, I used the following AWS features:
 Here is a summary of the iterative process:
 
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/Lambda_arch.png?raw=true">
+</p>
+
 
 
 
