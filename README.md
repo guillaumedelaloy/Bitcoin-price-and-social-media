@@ -88,7 +88,7 @@ For both model:
 - we will rebalance the classes by artificially upsampling the training set
 - we will use Keras (Tensorflow as backend) to design a neural network
 - we transform the tweets into vectors of size (num_words=35, voc_size=10000) by a bag of words technique
-- the architecture of the nn is : one embedding layer (embedding dim=100), one LSTM layer, one Dense layer (size = number of classes)
+- the architecture of the nn is : one embedding layer (35, embedding dim=100), one LSTM layer(1,100), one Dense layer (1,size = number of classes)
 
 
 ## Sentiment classifier
