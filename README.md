@@ -19,6 +19,8 @@ In order to do this, I used the following AWS features:
 - a [lambda function](airlines-complaints-microservice/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
 - a S3 bucket storing the models trained locally
 
+If you have any question related to connecting lambdas to S3 buckets or API gateway, feel free to contact me :) !
+
 
 
 Here is a summary of the iterative process:
