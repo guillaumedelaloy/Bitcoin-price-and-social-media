@@ -1,10 +1,10 @@
 # Introduction
 
-Today, a good way get your flight reimbursed when facing a major problem is to publish your complaint social medias. I was curious about several things : 
+Today, a good way get your flight reimbursed when facing a major problem is to share your complaint through social medias. I was curious about several things : 
 
 Do people really use social medias to communicate with the airline companies ?
 What are the most frequent complaints ?
-Is there a significant difference in terms of customer experience between the companies (based on social media activity) ?
+Is there a significant difference in terms of customer satisfaction between the companies (based on social media activity) ?
 
 # Method
 
