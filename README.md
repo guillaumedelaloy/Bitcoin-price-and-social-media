@@ -14,9 +14,9 @@ I have gathered during two weeks the tweets related to the biggest airline compa
 
 In order to do this, I used the following AWS features:
 
-- a lambda function called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
-- a lambda function computing the sentiment of a tweet, called through an API built with API Gateway
-- a lambda function computing the topic of a complaints, called through an API built with API Gateway
+- a [lambda function](airlines-complaints-microservice/aws_files/stream_tweets_git.py.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
+- a [lambda function](airlines-complaints-microservice/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
+- a [lambda function](airlines-complaints-microservice/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
 - a S3 bucket storing the models trained locally
 
 
@@ -70,6 +70,8 @@ The new sample and the new cloud of words with the clean data looks like:
 </p>
 
 We will apply those transformations to both the training dataset and the data collected and stored in the dynamo table.
+
+Code for cleaning data/training the models is available [here](airlines-complaints-microservice/airlines_complaints_analysis.ipynb)
 
 # Modeling
 
