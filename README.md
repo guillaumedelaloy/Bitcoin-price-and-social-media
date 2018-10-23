@@ -3,7 +3,9 @@
 Today, a good way get your flight reimbursed when facing a major problem is to share your complaint through social medias. I was curious about several things : 
 
 1°) Do people really use social medias to communicate with the airline companies?
+<br>
 2°) What are the most frequent complaints?
+<br>
 3°) Which company should I choose if I want my flight to be on time?
 
 # Method
@@ -148,6 +150,7 @@ We strongly reject the hypothesis of equal probabilities of the complaints betwe
 </br>
 3°) Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
 ```
+
 H0 : p_united-p_brit=0
 H1 : p_united-p_brit!=0
 
@@ -156,18 +159,24 @@ X_brit=381 , N_brit=2273
 X_united=787, N_united=2787
 
 Then we have : 
+
+
 p_pooled^=(X_brit+X_united)/(N_brit+N_united)=0.233
+
 SE=[(p*(1-p)*(1/N_brit + 1/N-united)]^0.5=0.012
+
 d^=(X_united/N_united) - (X_brit/N_brit)=0.1183
+
 confidence interval= d^ +/- 1.96*SE , for alpha=0.05
 CI=[0.095;0.14]
+
 CI does not include 0, so we can conclude that the difference of frequency complaints related to delayed flights didn't occur by chance with a confidence of 95%!
 ```
 
 As a consequence, we should choose British airways in order to avoid delays! (*)
 
 
-* : obviously, we can't really say so because the study is only based on a sample of tweets that do not reflect the whole flight traffic of those companies. Moreover, as British and United do not operate on the same areas, and considering that the period of study is rather small (2 weeks), an external event such as a storm in the US could cause way more delays for United than British Airways.
+*obviously, we can't really say so because the study is only based on a sample of tweets that do not reflect the whole flight traffic of those companies. Moreover, as British and United do not operate on the same areas, and considering that the period of study is rather small (2 weeks), an external event such as a storm in the US could cause way more delays for United than British Airways.
 
 
 
