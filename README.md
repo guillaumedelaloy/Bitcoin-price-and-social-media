@@ -168,7 +168,8 @@ d^=(X_united/N_united) - (X_brit/N_brit)=0.1183
 confidence interval= d^ +/- 1.96*SE , for alpha=0.05
 CI=[0.095;0.14]
 
-CI does not include 0, so we can conclude that the difference of frequency complaints related to delayed flights didn't occur by chance with a confidence of 95%!
+CI does not include 0, so we can conclude that the difference of frequencies of 
+complaints related to delayed flights didn't occur by chance with a confidence of 95%!
 ```
 
 As a consequence, we should choose British airways in order to avoid delays! (*)
