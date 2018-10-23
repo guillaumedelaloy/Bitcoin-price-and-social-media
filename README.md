@@ -10,7 +10,7 @@ Today, a good way get your flight reimbursed when facing a major problem is to s
 
 # Method
 
-I have gathered during two weeks the tweets related to the biggest airline companies : American Air, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
+I have gathered during two weeks the tweets mentioning  the following airline companies : American Air, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
 - a sentiment classifier, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
 - a topic classification, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
