@@ -131,12 +131,14 @@ It is time now to answer the three questions of the introduction:
 2°) Rankings of the frequencies of complaints are the same in each company, and follow this order (from the most frequent to the least common):
 
 <br>
+```
 1st - Customer Service Issue
 2nd - Late Flight
 3rd - Luggage
 5th - Flight Booking Problems & Flight Attendant Complaints
 6th - Cancelled Flight
 7th - Long Lines
+```
 
 However, the probabilites of the type of complaints are not the same between the companies.
 Kruskall Wallis test results: ```KruskalResult(statistic=20.93635239906925, pvalue=2.8426856747332026e-05)```
