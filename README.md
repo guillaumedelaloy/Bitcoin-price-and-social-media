@@ -123,6 +123,9 @@ Here is the distribution of the complaints between the 3 companies we selected:
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
 </p>
 <br>
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_repartittion.png?raw=true">
+</p>
 It is time now to answer the three questions of the introduction:
 
 1°) People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)
