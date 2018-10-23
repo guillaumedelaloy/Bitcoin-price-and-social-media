@@ -11,10 +11,10 @@ Today, a good way get your flight reimbursed when facing a major problem is to s
 # Method
 
 I have gathered during two weeks the tweets mentioning  the following airline companies : American Air, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
-- a sentiment classifier, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
-- a topic classification, in order to determine if a complaint is related to luggage issues, delays, cancellations...
+- a **sentiment classifier**, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
+- a **topic classification**, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
-In order to do this, I used the following AWS features (click on [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/tree/master/aws_files) for the code):
+In order to do this, I used the following **AWS features** (click on [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/tree/master/aws_files) for the code):
 
 - a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/stream_tweets_git.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
 - a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
@@ -25,7 +25,7 @@ If you have any question related to connecting lambdas to S3 buckets or API gate
 
 
 
-Here is a summary of the iterative process:
+**Here is a summary of the iterative process:**
 
 
 <p align="center">
@@ -46,8 +46,8 @@ Let's have a look at what the raw tweets look like:
 
 ```
 We should make the following transformations:
-- t1 : remove the urls starting with http -> regex
-- t2 : we assume that when two companies are mentioned, as in tweet 4, it is very complex to understand which company the customer is talking to -> we will keep only the tweets with one company mentioned
+- **t1 : remove the urls starting with http -> regex**
+- **t2 : we assume that when two companies are mentioned, as in tweet 4, it is very complex to understand which company the customer is talking to -> we will keep only the tweets with one company mentioned**
  
  We can also use wordcloud to map the most frequent words:
  
@@ -56,7 +56,7 @@ We should make the following transformations:
 </p>
 
 We don't want the models to learn on specific companies names:
-- t3 : replace company name by 'firm'
+- **t3 : replace company name by 'firm'**
 
 The new sample and the new cloud of words with the clean data looks like:
 
@@ -99,7 +99,7 @@ For both model:
 
 ## Sentiment classifier
 
-We obtain a final accuracy of : 92.36 %
+**We obtain a final accuracy of : 92.36 %**
 
 <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/sentiment_training.png?raw=true">
@@ -109,7 +109,7 @@ We obtain a final accuracy of : 92.36 %
 
 I rearranged a bit the categories of neagtive reasons because the category ```Bad flight``` was quite blurry and hard to differenciate. As a consequence, I merged the category with ```Can't Tell```, which means it is not clear to identify the main reason of the complaint.
 
-We obtain a final accuracy of : 97.68 %
+**We obtain a final accuracy of : 97.68 %**
 
 <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_training.png?raw=true">
@@ -131,9 +131,9 @@ Here we normalize the distribution with the total number of complaints of each c
 </p>
 It is time now to answer the three questions of the introduction:
 
-1°) People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)
+1°) **People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)**
 <br>
-2°) Rankings of the frequencies of complaints are the same in each company, and follow this order (from the most frequent to the least common):
+2°) **The rankings of the complaints' frequencies are the same in each company**, and follow this order (from the most frequent to the least common):
 
 <br>
 ```
@@ -145,7 +145,7 @@ It is time now to answer the three questions of the introduction:
 7th - Long Lines
 ```
 
-However, the probabilites of the type of complaints are not the same between the companies.
+**However, the complaints' frequencies  are not the same between the companies**
 Kruskall Wallis test results: ```KruskalResult(statistic=20.93635239906925, pvalue=2.8426856747332026e-05)```
 We strongly reject the hypothesis of equal probabilities of the complaints between the companies.
  
@@ -177,7 +177,7 @@ CI does not include 0, so we can conclude that the difference of frequencies of
 complaints related to delayed flights didn't occur by chance with a confidence of 95%!
 ```
 
-As a consequence, we should choose British airways in order to avoid delays! (*)
+**As a consequence, we should choose British airways in order to avoid delays!** (*)
 
 
 *obviously, we can't really say so because the study is only based on a sample of tweets that do not reflect the whole flight traffic of those companies. Moreover, as British and United do not operate on the same areas, and considering that the period of study is rather small (2 weeks), an external event such as a storm in the US could cause way more delays for United than British Airways.
