@@ -124,16 +124,13 @@ Here is the distribution of the complaints between the 3 companies we selected:
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
 </p>
 <br>
-</br>
 It is time now to answer the three questions of the introduction:
 
 1°) People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)
 <br>
-</br>
 2°) Rankings of the frequencies of complaints are the same in each company, and follow this order (from the most frequent to the least common):
 
 <br>
-</br>
 1st - Customer Service Issue
 2nd - Late Flight
 3rd - Luggage
@@ -147,7 +144,6 @@ We strongly reject the hypothesis of equal probabilities of the complaints betwe
  
 
 <br>
-</br>
 3°) Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
 ```
 
