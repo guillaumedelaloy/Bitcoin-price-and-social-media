@@ -127,9 +127,7 @@ Here is the distribution of the counts of complaints between the 3 companies we 
 Here we normalize the distribution with the total number of complaints of each company:
 <br>
 <p align="center">
-  <img src= "
-        airlines-complaints-microservice/image/topic_rep.png
-      ?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_rep.png?raw=true">
 </p>
 It is time now to answer the three questions of the introduction:
 
