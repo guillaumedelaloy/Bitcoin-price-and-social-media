@@ -14,11 +14,11 @@ I have gathered during two weeks the tweets related to the biggest airline compa
 - a sentiment classifier, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
 - a topic classification, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
-In order to do this, I used the following AWS features (click on [lambda function](airlines-complaints-microservice/aws_files/) for the code):
+In order to do this, I used the following AWS features (click on [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/tree/master/aws_files) for the code):
 
-- a [lambda function](airlines-complaints-microservice/aws_files/stream_tweets_git.py.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
-- a [lambda function](airlines-complaints-microservice/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
-- a [lambda function](airlines-complaints-microservice/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/stream_tweets_git.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
 - a S3 bucket storing the models trained locally
 
 If you have any question related to connecting lambdas to S3 buckets or API gateway, feel free to contact me :) !
