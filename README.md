@@ -2,11 +2,11 @@
 
 Today, a good way get your flight reimbursed when facing a major problem is to share your complaint through social medias. I was curious about several things : 
 
-1°) Do people really use social medias to communicate with the airline companies?
+**1°)** Do people really use social medias to communicate with the airline companies?
 <br>
-2°) What are the most frequent complaints?
+**2°)** What are the most frequent complaints?
 <br>
-3°) Which company should I choose if I want my flight to be on time?
+**3°)** Which company should I choose if I want my flight to be on time?
 
 # Method
 
@@ -131,9 +131,9 @@ Here we normalize the distribution with the total number of complaints of each c
 </p>
 It is time now to answer the three questions of the introduction:
 
-1°) **People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)**
+**1°) People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)**
 <br>
-2°) **The rankings of the complaints' frequencies are the same in each company**, and follow this order (from the most frequent to the least common):
+**2°) The rankings of the complaints' frequencies are the same in each company**, and follow this order (from the most frequent to the least common):
 
 <br>
 ```
@@ -151,7 +151,7 @@ We strongly reject the hypothesis of equal probabilities of the complaints betwe
  
 
 <br>
-3°) Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
+**3°)** Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
 ```
 
 H0 : p_united-p_brit=0
