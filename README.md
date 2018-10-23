@@ -115,6 +115,12 @@ We obtain a final accuracy of : 97.68 %
 
 # Results
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
+</p>
+
+
+
 # Conclusions
 
 
