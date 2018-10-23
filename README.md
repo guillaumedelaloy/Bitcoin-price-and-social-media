@@ -2,9 +2,9 @@
 
 Today, a good way get your flight reimbursed when facing a major problem is to share your complaint through social medias. I was curious about several things : 
 
-Do people really use social medias to communicate with the airline companies ?
-What are the most frequent complaints ?
-Is there a significant difference in terms of customer satisfaction between the companies (based on social media activity) ?
+1°) Do people really use social medias to communicate with the airline companies?
+2°) What are the most frequent complaints?
+3°) Which company should I choose if I want my flight to be on time?
 
 # Method
 
@@ -12,7 +12,7 @@ I have gathered during two weeks the tweets related to the biggest airline compa
 - a sentiment classifier, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
 - a topic classification, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
-In order to do this, I used the following AWS features:
+In order to do this, I used the following AWS features (click on [lambda function](airlines-complaints-microservice/aws_files/) for the code):
 
 - a [lambda function](airlines-complaints-microservice/aws_files/stream_tweets_git.py.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
 - a [lambda function](airlines-complaints-microservice/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
@@ -113,15 +113,62 @@ We obtain a final accuracy of : 97.68 %
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_training.png?raw=true">
 </p>
 
-# Results
+# Results and Interpretations
 
+Here is the distribution of the complaints between the 3 companies we selected:
+<br>
+</br>
 <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
 </p>
+<br>
+</br>
+It is time now to answer the three questions of the introduction:
+
+1°) People do use social media to interact with the company : about 90K mentions per day for AmericanAir (6700 flights per day)
+<br>
+</br>
+2°) Rankings of the frequencies of complaints are the same in each company, and follow this order (from the most frequent to the least common):
+
+<br>
+</br>
+1st - Customer Service Issue
+2nd - Late Flight
+3rd - Luggage
+5th - Flight Booking Problems & Flight Attendant Complaints
+6th - Cancelled Flight
+7th - Long Lines
+
+However, the probabilites of the type of complaints are not the same between the companies.
+Kruskall Wallis test results: ```KruskalResult(statistic=20.93635239906925, pvalue=2.8426856747332026e-05)```
+We strongly reject the hypothesis of equal probabilities of the complaints between the companies.
+ 
+
+<br>
+</br>
+3°) Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
+```
+H0 : p_united-p_brit=0
+H1 : p_united-p_brit!=0
+
+With X being the number of late flight complaint and N the total number of complaints:
+X_brit=381 , N_brit=2273
+X_united=787, N_united=2787
+
+Then we have : 
+p_pooled^=(X_brit+X_united)/(N_brit+N_united)=0.233
+SE=[(p*(1-p)*(1/N_brit + 1/N-united)]^0.5=0.012
+d^=(X_united/N_united) - (X_brit/N_brit)=0.1183
+confidence interval= d^ +/- 1.96*SE , for alpha=0.05
+CI=[0.095;0.14]
+CI does not include 0, so we can conclude that the difference of frequency complaints related to delayed flights didn't occur by chance with a confidence of 95%!
+```
+
+As a consequence, we should choose British airways in order to avoid delays! (*)
 
 
+* : obviously, we can't really say so because the study is only based on a sample of tweets that do not reflect the whole flight traffic of those companies. Moreover, as British and United do not operate on the same areas, and considering that the period of study is rather small (2 weeks), an external event such as a storm in the US could cause way more delays for United than British Airways.
 
-# Conclusions
 
 
 
