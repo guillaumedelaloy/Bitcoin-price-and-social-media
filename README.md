@@ -117,11 +117,14 @@ We obtain a final accuracy of : 97.68 %
 
 # Results and Interpretations
 
-Here is the distribution of the complaints between the 3 companies we selected:
+Here is the distribution of the counts of complaints between the 3 companies we selected:
 <br>
 <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
 </p>
+<br>
+<br>
+Here we normalize the distribution with the total number of complaints of each company:
 <br>
 <p align="center">
   <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_repartittion.png?raw=true">
