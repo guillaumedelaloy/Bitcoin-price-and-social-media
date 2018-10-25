@@ -151,7 +151,7 @@ We strongly reject the hypothesis of equal probabilities of the complaints betwe
  
 
 <br>
-**3°)** Let's conduct a two sample t-test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
+**3°)** Let's conduct a two tailed test in order to check if there is a significant difference between p_united=P(complaint='Late Flight', company='united') and p_brit=P(complaint='Late Flight', company='bristish_airways').
 ```
 
 H0 : p_united-p_brit=0
@@ -164,13 +164,14 @@ X_united=787, N_united=2787
 Then we have : 
 
 
-p_pooled^=(X_brit+X_united)/(N_brit+N_united)=0.233
+p_pooled^ = (X_brit+X_united) / (N_brit+N_united) = 0.233
 
-SE=[(p*(1-p)*(1/N_brit + 1/N-united)]^0.5=0.012
+SE = [(p*(1-p)*(1/N_brit + 1/N-united)]^ 0.5 = 0.012
 
-d^=(X_united/N_united) - (X_brit/N_brit)=0.1183
+d^ = (X_united/N_united) - (X_brit/N_brit) = 0.1183
 
-confidence interval= d^ +/- 1.96*SE , for alpha=0.05
+confidence interval = d^ +/- 1.96*SE , for alpha=0.05
+
 CI=[0.095;0.14]
 
 CI does not include 0, so we can conclude that the difference of frequencies of 
