@@ -16,9 +16,9 @@ I have gathered during two weeks the tweets mentioning  the following airline co
 
 In order to do this, I used the following **AWS features** (click on [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/tree/master/aws_files) for the code):
 
-- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/stream_tweets_git.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
-- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
-- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints/blob/master/aws_files/stream_tweets_git.py) called every 20 min in order to retrieve the tweets (I could have gone for 'every 3 min' but it is clearly too expensive and we would have retrieved many duplicated tweets)
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints/blob/master/aws_files/call_sentiment_git.py) computing the sentiment of a tweet, called through an API built with API Gateway
+- a [lambda function](https://github.com/guillaumedelaloy/airlines-complaints/blob/master/aws_files/call_topic_classif_git.py) computing the topic of a complaints, called through an API built with API Gateway
 - a S3 bucket storing the models trained locally
 
 If you have any question related to connecting lambdas to S3 buckets or API gateway, feel free to contact me :) !
@@ -29,7 +29,7 @@ If you have any question related to connecting lambdas to S3 buckets or API gate
 
 
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/architecture.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/architecture.png?raw=true">
 </p>
 
 
@@ -52,7 +52,7 @@ We should make the following transformations:
  We can also use wordcloud to map the most frequent words:
  
  <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/wordcloud_airline_1.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/wordcloud_airline_1.png?raw=true">
 </p>
 
 We don't want the models to learn on specific companies names:
@@ -70,12 +70,12 @@ The new sample and the new cloud of words with the clean data looks like:
 ```
 
  <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/wordcloud_airline_2.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/wordcloud_airline_2.png?raw=true">
 </p>
 
 We will apply those transformations to both the training dataset and the data collected and stored in the dynamo table.
 
-Code for cleaning data/training the models is available [here](airlines-complaints-microservice/airlines_complaints_analysis.ipynb)
+Code for cleaning data/training the models is available [here](airlines-complaints/airlines_complaints_analysis.ipynb)
 
 # Modeling
 
@@ -102,7 +102,7 @@ For both model:
 **We obtain a final accuracy of : 92.36 %**
 
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/sentiment_training.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/sentiment_training.png?raw=true">
 </p>
 
 ## Topic modeling
@@ -112,7 +112,7 @@ I rearranged a bit the categories of neagtive reasons because the category ```Ba
 **We obtain a final accuracy of : 97.68 %**
 
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_training.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/topic_training.png?raw=true">
 </p>
 
 # Results and Interpretations
@@ -120,14 +120,14 @@ I rearranged a bit the categories of neagtive reasons because the category ```Ba
 Here is the distribution of the counts of complaints between the 3 companies we selected:
 <br>
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/distrib_complaints.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/distrib_complaints.png?raw=true">
 </p>
 <br>
 <br>
 Here we normalize the distribution with the total number of complaints of each company:
 <br>
 <p align="center">
-  <img src= "https://github.com/guillaumedelaloy/airlines-complaints-microservice/blob/master/image/topic_rep.png?raw=true">
+  <img src= "https://github.com/guillaumedelaloy/airlines-complaints/blob/master/image/topic_rep.png?raw=true">
 </p>
 It is time now to answer the three questions of the introduction:
 
