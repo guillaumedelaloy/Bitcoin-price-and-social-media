@@ -1,8 +1,8 @@
 # Introduction
 
-Today, a good way get your flight reimbursed when facing a major problem is to share your complaint through social medias. I was curious about several things : 
+Today, a good way to get your flight reimbursed when facing a major problem is to share your complaint through social media. I was curious about several things : 
 
-**1°)** Do people really use social medias to communicate with the airline companies?
+**1°)** Do people really use social media to communicate with the airline companies?
 <br>
 **2°)** What are the most frequent complaints?
 <br>
@@ -10,7 +10,7 @@ Today, a good way get your flight reimbursed when facing a major problem is to s
 
 # Method
 
-I have gathered during two weeks the tweets mentioning  the following airline companies : American Air, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
+I have gathered during two weeks the tweets mentionning  the following airline companies : American Airlines, United and British Airways. Thanks to this [data set](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) found on Kaggle, I trained two models : 
 - a **sentiment classifier**, in order to determine if the tweet is a complaint, a general remark, or a positive feed back from the customer
 - a **topic classification**, in order to determine if a complaint is related to luggage issues, delays, cancellations...
 
